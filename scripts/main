@@ -1,0 +1,11 @@
+#
+# Source everything in /sources
+# The order matters here!
+#
+
+export SHELL_DIRECTORY_CONFIG="$HOME"/.config/shell
+
+source "$SHELL_DIRECTORY_CONFIG"/sources/xdg
+source "$SHELL_DIRECTORY_CONFIG"/sources/alias
+source "$SHELL_DIRECTORY_CONFIG"/sources/tidy
+source "$SHELL_DIRECTORY_CONFIG"/sources/app

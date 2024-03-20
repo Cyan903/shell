@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+ln_bash() {
+    echo "bash -> .bashrc, .bash_profile, .bash_logout"
+
+    ln -sf "$HOME"/.bashrc "$SHELL_DIRECTORY_CONFIG"/home/bash/bashrc
+    ln -sf "$HOME"/.bash_profile "$SHELL_DIRECTORY_CONFIG"/home/bash/bash_profile
+    ln -sf "$HOME"/.bash_logout "$SHELL_DIRECTORY_CONFIG"/home/bash/bash_logout
+}
+
+
+ln_zsh() {
+    echo "zsh -> .zshrc, .zprofile"
+
+    ln -sf "$HOME"/.zshrc "$SHELL_DIRECTORY_CONFIG"/home/zsh/zshrc
+    ln -sf "$HOME"/.zprofile "$SHELL_DIRECTORY_CONFIG"/home/zsh/zprofile
+}
+
+# Read and print
+echo "Home: $HOME"
+echo "Shell: $SHELL"
+echo "Terminal: $TERM"
+echo "Configuration: $SHELL_DIRECTORY_CONFIG"
+read -r -p "Are these correct? [y/N] " response
+
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    echo
+    ln_bash
+    ln_zsh
+fi

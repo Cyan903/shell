@@ -1,0 +1,7 @@
+#
+# Print eye candy when needed
+#
+
+if [[ "$TERM" == "alacritty" || "$TERM" == "xterm-256color" ]] then
+    pfetch
+fi
