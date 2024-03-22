@@ -8,6 +8,7 @@
     <img src="ext/preview.png" />
 </p>
 
+<hr />
 
 Configuration files for my shells. I try to keep `bash` as simple as possible while using `zsh` as my main shell.
 
