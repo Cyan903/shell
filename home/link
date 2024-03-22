@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+# Very simple script to ensure shell configuration files
+# are linked here.
+
+ln_bash() {
+    echo ; echo "bash -> .bashrc, .bash_profile, .bash_logout"
+
+    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/bash/bashrc "$HOME"/.bashrc
+    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/bash/bash_profile "$HOME"/.bash_profile
+    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/bash/bash_logout "$HOME"/.bash_logout
+
+    echo $(ls -la "$HOME/.bashrc")
+    echo $(ls -la "$HOME/.bash_profile")
+    echo $(ls -la "$HOME/.bash_logout")
+}
+
+ln_zsh() {
+    echo ; echo "zsh -> .zshrc, .zprofile"
+
+    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zshrc "$HOME"/.zshrc
+    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zprofile "$HOME"/.zprofile
+
+    echo $(ls -la "$HOME/.zshrc")
+    echo $(ls -la "$HOME/.zprofile")
+}
+
+echo "Home: $HOME"
+echo "Shell: $SHELL"
+echo "Terminal: $TERM"
+echo "Configuration: $SHELL_DIRECTORY_CONFIG"
+read -r -p "Are these correct? [y/N] " response
+
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    ln_bash
+    ln_zsh
+fi

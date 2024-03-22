@@ -5,6 +5,7 @@
 # Load shell profile
 source "$HOME"/.config/shell/scripts/main
 source "$HOME"/.config/shell/scripts/pretty
+source "$HOME"/.config/shell/scripts/rangercd
 
 # History
 export ZDOTDIR="$HOME"/.config/zsh
@@ -15,10 +16,21 @@ SAVEHIST=1000
 
 # Keybinds
 bindkey -s "^T" "tmux new\n"
+bindkey -s '^o' 'rangercd\n'
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
+# Tab completions
+autoload -U compinit
+zstyle ":completion:*" menu select
+zmodload zsh/complist
+
+compinit
+_comp_options+=(globdots)
 
 # Prompt
 # PS1="$(/home/hwk/dev/sand/promptprint/promptprint)" # TODO: Fix this
@@ -28,3 +40,4 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/share/zsh/plugins/zsh-fzf-plugin/fzf.plugin.zsh
