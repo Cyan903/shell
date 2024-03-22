@@ -2,6 +2,6 @@
 
 # List all zsh plugins installed using pacman.
 
-pacman -Qe | grep zsh | awk '{ print $1 }' > "$SHELL_DIRECTORY_CONFIG"/.list
+pacman -Qe | grep zsh | awk "{ print $1 }" > "$SHELL_DIRECTORY_CONFIG"/.list
 echo "Installed:"
 cat "$SHELL_DIRECTORY_CONFIG"/.list

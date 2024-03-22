@@ -15,8 +15,8 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 # Keybinds
-bindkey -s "^T" "tmux new\n"
-bindkey -s '^o' 'rangercd\n'
+bindkey -s "^B" "tmux new\n"
+bindkey -s "^O" "rangercd\n"
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
