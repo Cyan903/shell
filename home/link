@@ -23,12 +23,20 @@ ln_zsh() {
 
     echo $(ls -la "$HOME/.zshrc")
     echo $(ls -la "$HOME/.zprofile")
+
+    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zshrc "$ZDOTDIR"/.zshrc
+    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zprofile "$ZDOTDIR"/.zprofile
+
+    echo $(ls -la "$ZDOTDIR/.zshrc")
+    echo $(ls -la "$ZDOTDIR/.zprofile")
 }
 
 echo "Home: $HOME"
 echo "Shell: $SHELL"
 echo "Terminal: $TERM"
 echo "Configuration: $SHELL_DIRECTORY_CONFIG"
+echo "ZSH Configuration: $ZDOTDIR"
+
 read -r -p "Are these correct? [y/N] " response
 
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
