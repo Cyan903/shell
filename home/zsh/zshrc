@@ -1,1 +1,30 @@
-/home/hwk/.zshrc
+#
+# ~/.zshrc
+#
+
+# Load shell profile
+source "$HOME"/.config/shell/scripts/main
+source "$HOME"/.config/shell/scripts/pretty
+
+# History
+export ZDOTDIR="$HOME"/.config/zsh
+
+HISTFILE=~/.cache/zhistfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+# Keybinds
+bindkey -s "^T" "tmux new\n"
+
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
+
+
+# Prompt
+# PS1="$(/home/hwk/dev/sand/promptprint/promptprint)" # TODO: Fix this
+
+# Plugins
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh

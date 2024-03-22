@@ -1,1 +1,16 @@
-/home/hwk/.bashrc
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+PS1='[\u@\h \W]\$ '
+
+# Load shell profile
+source "$HOME"/.config/shell/scripts/main
+source "$HOME"/.config/shell/scripts/pretty
+
+# Set history and prompt
+export HISTFILE="$XDG_STATE_HOME"/bash/history
+declare -x PROMPT_COMMAND='PS1="$(/home/hwk/dev/sand/promptprint/promptprint)"' # TODO: Fix this

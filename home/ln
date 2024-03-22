@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
 
+# TODO: Swap this
+
 ln_bash() {
     echo "bash -> .bashrc, .bash_profile, .bash_logout"
 
-    ln -sf "$HOME"/.bashrc "$SHELL_DIRECTORY_CONFIG"/home/bash/bashrc
-    ln -sf "$HOME"/.bash_profile "$SHELL_DIRECTORY_CONFIG"/home/bash/bash_profile
-    ln -sf "$HOME"/.bash_logout "$SHELL_DIRECTORY_CONFIG"/home/bash/bash_logout
+    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/bash/bashrc "$HOME"/.bashrc        
+    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/bash/bash_profile "$HOME"/.bash_profile  
+    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/bash/bash_logout "$HOME"/.bash_logout   
 }
-
 
 ln_zsh() {
     echo "zsh -> .zshrc, .zprofile"
 
-    ln -sf "$HOME"/.zshrc "$SHELL_DIRECTORY_CONFIG"/home/zsh/zshrc
-    ln -sf "$HOME"/.zprofile "$SHELL_DIRECTORY_CONFIG"/home/zsh/zprofile
+    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zshrc "$HOME"/.zshrc
+    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zprofile "$HOME"/.zprofile
 }
 
 # Read and print

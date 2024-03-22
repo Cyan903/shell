@@ -1,1 +1,7 @@
-/home/hwk/.zprofile
+#
+# ~/.zprofile
+#
+
+# Load shell profile
+source "$HOME"/.config/shell/scripts/main
+source "$HOME"/.config/shell/scripts/login
