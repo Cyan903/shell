@@ -5,6 +5,7 @@
 rangercd () {
     tmp="$(mktemp)"
     ranger --choosedir="$tmp" "$@"
+
     if [ -f "$tmp" ]; then
         dir="$(cat "$tmp")"
         rm -f "$tmp"
