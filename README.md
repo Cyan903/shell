@@ -18,7 +18,7 @@ Configuration files for my shells. I try to keep `bash` as simple as possible wh
 
 ## Setup
 
-I'm only using `bash` and `zsh` at the moment. All of my `zsh` plugins are managed as Arch packages. The full list of plugins and versions I'm running can be found in [/.list](.list).
+I'm only using `bash` and `zsh` at the moment. All of my `zsh` plugins are managed with [zap](https://github.com/zap-zsh/zap).
 
 ```sh
 $ cd ~/.config

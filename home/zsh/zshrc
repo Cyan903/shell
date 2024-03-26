@@ -37,8 +37,10 @@ _comp_options+=(globdots)
 eval "$(starship init zsh)"
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /usr/share/zsh/plugins/zsh-fzf-plugin/fzf.plugin.zsh
+[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
+
+plug "zsh-users/zsh-autosuggestions"
+plug "hwk929/zsh-fzf"
+plug "zsh-users/zsh-history-substring-search"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "MichaelAquilina/zsh-you-should-use"
