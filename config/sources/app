@@ -1,7 +1,17 @@
 #
-# Change directory using ranger
+# Application specific scripts
 #
 
+# pnpm start
+export PNPM_HOME="$XDG_DATA_HOME"
+
+case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Change directory using ranger
 rangercd () {
     tmp="$(mktemp)"
     ranger --choosedir="$tmp" "$@"
@@ -12,3 +22,4 @@ rangercd () {
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
+

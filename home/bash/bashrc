@@ -8,8 +8,8 @@
 PS1='[\u@\h \W]\$ '
 
 # Load shell profile
-source "$HOME"/.config/shell/scripts/main
-source "$HOME"/.config/shell/scripts/pretty
+source "$HOME"/.config/shell/config/main
+source "$HOME"/.config/shell/config/scripts/pretty
 source "$HOME"/.config/shell/prompt/bash
 
 # Set history

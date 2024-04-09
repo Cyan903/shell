@@ -10,9 +10,8 @@ __PROMPT_CYAN="%F{cyan}"
 __PROMPT_DIR="%~"
 __PROMPT_RESET="%F{reset_color}"
 
-
 # Set prompt
-source "$HOME"/.config/shell/prompt/ps
+source "$HOME"/.config/shell/prompt/_ps
 
 [ "$ZSH_VERSION" ] && precmd() {
     __prompt_command

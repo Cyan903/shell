@@ -3,5 +3,5 @@
 #
 
 # Load shell profile
-source "$HOME"/.config/shell/scripts/main
-source "$HOME"/.config/shell/scripts/login
+source "$HOME"/.config/shell/config/main
+source "$HOME"/.config/shell/config/scripts/login

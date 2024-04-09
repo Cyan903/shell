@@ -3,9 +3,8 @@
 #
 
 # Load shell profile
-source "$HOME"/.config/shell/scripts/main
-source "$HOME"/.config/shell/scripts/pretty
-source "$HOME"/.config/shell/scripts/rangercd
+source "$HOME"/.config/shell/config/main
+source "$HOME"/.config/shell/config/scripts/pretty
 
 # History
 export ZDOTDIR="$HOME"/.config/zsh
