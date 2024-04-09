@@ -12,5 +12,5 @@ source "$HOME"/.config/shell/scripts/main
 source "$HOME"/.config/shell/scripts/pretty
 source "$HOME"/.config/shell/prompt/bash
 
-# Set history and prompt
+# Set history
 export HISTFILE="$XDG_STATE_HOME"/bash/history
