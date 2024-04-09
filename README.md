@@ -5,7 +5,7 @@
 <hr />
 
 <p align="center">
-    <img src="ext/preview2.png" />
+    <img src="ext/preview.png" />
 </p>
 
 <hr />
