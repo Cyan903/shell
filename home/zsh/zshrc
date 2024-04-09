@@ -33,8 +33,9 @@ compinit
 _comp_options+=(globdots)
 
 # Prompt
-# setopt promptsubst
-eval "$(starship init zsh)"
+setopt promptsubst
+autoload -U colors && colors
+source "$HOME"/.config/shell/prompt/zsh
 
 # Plugins
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"

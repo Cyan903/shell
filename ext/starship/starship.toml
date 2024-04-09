@@ -8,6 +8,7 @@ disabled = true
 [battery]
 disabled = true
 
+# I don't use starship anymore, but I still want to keep this config as a backup.
 # https://starship.rs/presets/plain-text#plain-text-symbols-preset
 [character]
 success_symbol = "[>](bold green)"

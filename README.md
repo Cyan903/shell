@@ -5,16 +5,17 @@
 <hr />
 
 <p align="center">
-    <img src="ext/preview.png" />
+    <img src="ext/preview2.png" />
 </p>
 
 <hr />
 
 Configuration files for my shells. I try to keep `bash` as simple as possible while using `zsh` as my main shell.
 
-- `/sources` is for things like `export` or `alias`.
-- `/scripts` is for things that can run such as functions.
 - `/home` is where all the configuration files are located (such as `.bashrc`).
+- `/scripts` is for things that can run such as functions.
+- `/prompt` is a custom prompt for `bash` and `zsh`.
+- `/sources` is for things like `export` or `alias`.
 
 ## Setup
 
