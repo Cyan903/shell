@@ -16,7 +16,7 @@ __CURRENT_SHELL=$(basename "$__CURRENT_USER_SHELL")
 __own_shell() {
     local res=""
 
-    if [ "$__DEFAULT_SHELL" != "$__CURRENT_SHELL" ]; then
+    if [[ "$__DEFAULT_SHELL" != "$__CURRENT_SHELL" ]]; then
         res="${__PROMPT_CYAN}${__CURRENT_SHELL} "
     fi
 
@@ -28,12 +28,12 @@ __workdir() {
 }
 
 __permissions() {
-    local rperms
+    local rperms=""
     local res=""
 
     rperms=$(stat --printf "%U" "$PWD")
 
-    if [ "$USER" != "$rperms" ]; then
+    if [[ "$USER" != "$rperms" ]]; then
         res="own ${__PROMPT_YELLOW}${rperms} "
     fi
 
@@ -43,7 +43,7 @@ __permissions() {
 __exitstatus() {
     local res=""
 
-    if [ "$1" != 0 ]
+    if [[ "$1" != 0 ]]
         then res=$__PROMPT_RED
         else res=$__PROMPT_GREEN
     fi

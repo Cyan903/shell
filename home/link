@@ -3,6 +3,7 @@
 # Very simple script to ensure shell configuration files
 # are linked here.
 
+
 ln_bash() {
     echo ; echo "bash -> .bashrc, .bash_profile, .bash_logout"
 
