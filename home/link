@@ -3,44 +3,52 @@
 # Very simple script to ensure shell configuration files
 # are linked here.
 
-
-ln_bash() {
-    echo ; echo "bash -> .bashrc, .bash_profile, .bash_logout"
-
-    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/bash/bashrc "$HOME"/.bashrc
-    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/bash/bash_profile "$HOME"/.bash_profile
-    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/bash/bash_logout "$HOME"/.bash_logout
-
-    echo $(ls -la "$HOME/.bashrc")
-    echo $(ls -la "$HOME/.bash_profile")
-    echo $(ls -la "$HOME/.bash_logout")
-}
-
-ln_zsh() {
-    echo ; echo "zsh -> .zshrc, .zprofile"
-
-    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zshrc "$HOME"/.zshrc
-    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zprofile "$HOME"/.zprofile
-
-    echo $(ls -la "$HOME/.zshrc")
-    echo $(ls -la "$HOME/.zprofile")
-
-    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zshrc "$ZDOTDIR"/.zshrc
-    ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zprofile "$ZDOTDIR"/.zprofile
-
-    echo $(ls -la "$ZDOTDIR/.zshrc")
-    echo $(ls -la "$ZDOTDIR/.zprofile")
-}
-
 echo "Home: $HOME"
 echo "Shell: $SHELL"
 echo "Terminal: $TERM"
 echo "Configuration: $SHELL_DIRECTORY_CONFIG"
 echo "ZSH Configuration: $ZDOTDIR"
 
-read -r -p "Are these correct? [y/N] " response
+link() {
+    echo "  1) bash"
+    echo "  2) zsh"
+    echo "  3) Exit"
 
-if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    ln_bash
-    ln_zsh
-fi
+    read -r -p "Select shell to link: " response
+
+    case $response in
+        1)
+            ln -sf "$SHELL_DIRECTORY_CONFIG"/home/bash/bashrc "$HOME"/.bashrc
+            ln -sf "$SHELL_DIRECTORY_CONFIG"/home/bash/bash_profile "$HOME"/.bash_profile
+            ln -sf "$SHELL_DIRECTORY_CONFIG"/home/bash/bash_logout "$HOME"/.bash_logout
+
+            ls -la "$HOME/.bashrc"
+            ls -la "$HOME/.bash_profile"
+            ls -la "$HOME/.bash_logout"
+        ;;
+
+        2)
+            ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zshrc "$ZDOTDIR"/.zshrc
+            ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zprofile "$ZDOTDIR"/.zprofile
+
+            ls -la "$ZDOTDIR/.zshrc"
+            ls -la "$ZDOTDIR/.zprofile"
+
+            read -r -p "Link zsh config to $HOME as well? [y/N]: " yn
+
+            if [[ $yn == "y" ]]; then
+                ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zshrc "$HOME"/.zshrc
+                ln -sf "$SHELL_DIRECTORY_CONFIG"/home/zsh/zprofile "$HOME"/.zprofile
+
+                ls -la "$HOME/.zshrc"
+                ls -la "$HOME/.zprofile"
+            fi
+        ;;
+
+        *) return ;;
+    esac
+
+    link
+}
+
+link
