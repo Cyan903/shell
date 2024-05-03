@@ -31,6 +31,9 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
+# Zoxide
+eval "$(zoxide init zsh)"
+
 # Prompt
 setopt promptsubst
 autoload -U colors && colors

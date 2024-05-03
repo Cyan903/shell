@@ -1,6 +1,12 @@
 #
-# Useful aliases and default applications
+# Useful aliases, functions, and exports
 #
+
+# Functions
+vcode() {
+    code "$1"
+    exit
+}
 
 # Alias
 alias ls="ls --color=auto"

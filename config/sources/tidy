@@ -29,6 +29,9 @@ export NPM_CONFIG_TMP=/tmp/npm
 # /.local/share
 export MINIKUBE_HOME="$XDG_DATA_HOME"/minikube 
 
+# /.local/state
+export W3M_DIR="$XDG_STATE_HOME/w3m" 
+
 # Alias cleanup
 alias wget="wget --hsts-file='$XDG_CACHE_HOME/wget-hsts'"
 alias gpg2="gpg2 --homedir "$XDG_DATA_HOME"/gnupg"
