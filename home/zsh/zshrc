@@ -33,6 +33,7 @@ _comp_options+=(globdots)
 
 # Zoxide
 eval "$(zoxide init zsh)"
+alias cd="z"
 
 # Prompt
 setopt promptsubst
