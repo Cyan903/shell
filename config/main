@@ -4,8 +4,9 @@
 #
 
 export SHELL_DIRECTORY_CONFIG="$HOME"/.config/shell
+export PATH=$PATH:$HOME/.local/bin
 
-source "$SHELL_DIRECTORY_CONFIG"/config/sources/xdg
-source "$SHELL_DIRECTORY_CONFIG"/config/sources/alias
-source "$SHELL_DIRECTORY_CONFIG"/config/sources/tidy
-source "$SHELL_DIRECTORY_CONFIG"/config/sources/app
+. "$SHELL_DIRECTORY_CONFIG"/config/sources/xdg
+. "$SHELL_DIRECTORY_CONFIG"/config/sources/alias
+. "$SHELL_DIRECTORY_CONFIG"/config/sources/tidy
+. "$SHELL_DIRECTORY_CONFIG"/config/sources/app
