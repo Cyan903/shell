@@ -17,5 +17,5 @@ alias vim="nvim"
 
 # Default
 export EDITOR="nvim"
-export TERMINAL="alacritty"
+export TERMINAL="xterm-256color"
 export BROWSER="firefox"
