@@ -18,4 +18,4 @@ alias vim="nvim"
 # Default
 export EDITOR="nvim"
 export TERMINAL="xterm-256color"
-export BROWSER="firefox"
+export BROWSER="w3m"
